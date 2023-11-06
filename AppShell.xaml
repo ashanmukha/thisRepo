@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="VisitorManagement.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:VisitorManagement"
+    xmlns:page="clr-namespace:VisitorManagement.Views"
+    Shell.BackgroundColor="White"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutItemIsVisible="False"
+    xmlns:avatar="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.ForegroundColor="#C4C4C4"
+    Shell.TabBarIsVisible="True"
+    Shell.TabBarTitleColor="#FFE11E"
+    Shell.TabBarUnselectedColor="#949BA5"
+    Shell.TitleColor="Black">
+
+    <Shell.Resources>
+        <Style TargetType="Border">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup>
+                        <VisualState Name="Normal"/>
+                        <VisualState Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#FFE11E"/>
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </Shell.Resources>
+    <!--<ShellContent  ContentTemplate="{DataTemplate page:LoginPage}"
+                  Route="LoginPage" Title="Menu"/>-->
+
+    <!--<TabBar Route="LoginPage">
+        <Tab>
+            <ShellContent  ContentTemplate="{DataTemplate page:LoginPage}"
+                  Route="LoginPage"/>
+        </Tab>
+    </TabBar>-->
+    <!--<Shell.Resources>
+        <ResourceDictionary >
+            <Style TargetType="Entry">
+                <Style.Triggers>
+                    <Trigger TargetType="Border"
+                             Property="Clicked"
+                             Value="true"/>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>-->
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout >
+            <Grid   RowDefinitions="auto,auto" Padding="20"  ColumnSpacing="5" ColumnDefinitions="auto,*">
+                <avatar:AvatarView ImageSource="personphoto"  CornerRadius="40" HeightRequest="60" WidthRequest="60"   Grid.Row="0" Grid.RowSpan="2"  HorizontalOptions="StartAndExpand" VerticalOptions="Start"/>
+                <Label Text="Shanmukha" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" FontSize="Medium"/>
+                <Label Text="hello" Grid.Row="2" Grid.Column="2" VerticalTextAlignment="Center"/>
+            </Grid>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="White"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutContentTemplate>
+        <DataTemplate>
+            <Grid   RowDefinitions="auto,auto,auto,auto,auto,auto">
+                <Border  x:Name="1"  Padding="15" StrokeThickness="0" BackgroundColor="Transparent"  >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10" >
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="Visitors Today" Grid.Column="1" VerticalOptions="Center"/>
+                        <Border Grid.Column="3" Padding="5" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Center" StrokeThickness="0" StrokeShape="RoundRectangle 3,3,3,3" BackgroundColor="#EE4B2B" >
+                            <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"  TextColor="White" />
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border x:Name="2" BackgroundColor="Transparent" Grid.Row="1" Padding="15" StrokeThickness="0" >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10">
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="Visitor Log" Grid.Column="1" VerticalOptions="Center"/>
+                        <Border Grid.Column="3" Padding="5" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Center" StrokeThickness="0" StrokeShape="RoundRectangle 3,3,3,3" BackgroundColor="#EE4B2B" >
+                            <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"  TextColor="White" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="3" BackgroundColor="Transparent" Grid.Row="2" Padding="15" StrokeThickness="0" >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10">
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="New Entry" Grid.Column="1" VerticalOptions="Center"/>
+                        <!--<Border Grid.Column="3" Padding="5" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Center" StrokeThickness="0" StrokeShape="RoundRectangle 3,3,3,3" BackgroundColor="#EE4B2B" >
+                            <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"  TextColor="White" />
+                        </Border>-->
+                    </Grid>
+                  
+                </Border>
+
+                <Border BackgroundColor="Transparent" Grid.Row="3" Padding="15" StrokeThickness="0" >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10">
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="Scan Visitor Card" Grid.Column="1" VerticalOptions="Center"/>
+
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="Transparent" Grid.Row="4" Padding="15" StrokeThickness="0" >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10">
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="Manage Password" Grid.Column="1" VerticalOptions="Center"/>
+
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="Transparent" Grid.Row="5" Padding="15" StrokeThickness="0" >
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="10">
+                        <Image Source="usersthree" HeightRequest="35"/>
+                        <Label Text="Log Out" Grid.Column="1" VerticalOptions="Center"/>
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutContentTemplate>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="auto,auto,*" Padding="15,15,15,15" ColumnSpacing="5" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <HorizontalStackLayout Spacing="5">
+                    <Image Source="briohome" VerticalOptions="Start" HeightRequest="30" />
+                    <Image Source="brioname"/>
+                </HorizontalStackLayout>
+                <Label Text="|" FontSize="Medium" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="VISITOR MANAGEMENT SYSTEM" MaxLines="2"  LineBreakMode="WordWrap" VerticalOptions="Center" Grid.Column="2"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+    <!--<FlyoutItem Title="Menu" Route="Flyoutbar" >
+        
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+    </FlyoutItem>-->
+
+
+    <TabBar Route="dashboard_page" >
+        <Tab Title="Home"
+            Icon="home"
+            >
+            <ShellContent ContentTemplate="{DataTemplate page:HomePage}"
+                  />
+        </Tab>
+        <Tab Title="New Entry"
+            Icon="usersthree.svg">
+            <ShellContent ContentTemplate="{DataTemplate page:Visitor_EntryPage}" 
+             />
+        </Tab>
+
+        <Tab Title="Visits Today"
+            Icon="calendericon.svg">
+            <ShellContent ContentTemplate="{DataTemplate page:VisitorsToadyPage}"
+                          />
+        </Tab>
+        <Tab Title="Visit Logs"
+            Icon="bulletlist.svg">
+            <ShellContent ContentTemplate="{DataTemplate page:VisitorLogPage}" 
+             />
+        </Tab>
+    </TabBar>
+    <!--<ShellContent  ContentTemplate="{DataTemplate page:VisitorEntryPage_Step2}"
+                  Route="VisitorEntryPage_Step2"
+                   Shell.NavBarHasShadow="False"/>-->
+
+</Shell>
